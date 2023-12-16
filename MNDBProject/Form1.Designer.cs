@@ -33,7 +33,16 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ShowClients = new System.Windows.Forms.Button();
             this.ShowMovies = new System.Windows.Forms.Button();
+            this.SortingType = new System.Windows.Forms.GroupBox();
+            this.ByDateAdded = new System.Windows.Forms.RadioButton();
+            this.ById = new System.Windows.Forms.RadioButton();
+            this.ByName = new System.Windows.Forms.RadioButton();
+            this.SortingDirection = new System.Windows.Forms.GroupBox();
+            this.Ascending = new System.Windows.Forms.RadioButton();
+            this.Descending = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SortingType.SuspendLayout();
+            this.SortingDirection.SuspendLayout();
             this.SuspendLayout();
             // 
             // Close
@@ -87,11 +96,92 @@
             this.ShowMovies.UseVisualStyleBackColor = true;
             this.ShowMovies.Click += new System.EventHandler(this.ShowMovies_Click);
             // 
+            // SortingType
+            // 
+            this.SortingType.Controls.Add(this.ByDateAdded);
+            this.SortingType.Controls.Add(this.ById);
+            this.SortingType.Controls.Add(this.ByName);
+            this.SortingType.Location = new System.Drawing.Point(1033, 28);
+            this.SortingType.Name = "SortingType";
+            this.SortingType.Size = new System.Drawing.Size(163, 100);
+            this.SortingType.TabIndex = 6;
+            this.SortingType.TabStop = false;
+            this.SortingType.Text = "Sortowanie";
+            // 
+            // ByDateAdded
+            // 
+            this.ByDateAdded.AutoSize = true;
+            this.ByDateAdded.Location = new System.Drawing.Point(0, 74);
+            this.ByDateAdded.Name = "ByDateAdded";
+            this.ByDateAdded.Size = new System.Drawing.Size(139, 20);
+            this.ByDateAdded.TabIndex = 2;
+            this.ByDateAdded.TabStop = true;
+            this.ByDateAdded.Text = "Po Dacie Dodania";
+            this.ByDateAdded.UseVisualStyleBackColor = true;
+            this.ByDateAdded.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ByDateAdded_MouseClick);
+            // 
+            // ById
+            // 
+            this.ById.Checked = true;
+            this.ById.Location = new System.Drawing.Point(0, 44);
+            this.ById.Name = "ById";
+            this.ById.Size = new System.Drawing.Size(104, 24);
+            this.ById.TabIndex = 1;
+            this.ById.TabStop = true;
+            this.ById.Text = "Po Id";
+            this.ById.UseVisualStyleBackColor = true;
+            // 
+            // ByName
+            // 
+            this.ByName.AutoSize = true;
+            this.ByName.Location = new System.Drawing.Point(0, 21);
+            this.ByName.Name = "ByName";
+            this.ByName.Size = new System.Drawing.Size(92, 20);
+            this.ByName.TabIndex = 0;
+            this.ByName.TabStop = true;
+            this.ByName.Text = "Po Nazwie";
+            this.ByName.UseVisualStyleBackColor = true;
+            // 
+            // SortingDirection
+            // 
+            this.SortingDirection.Controls.Add(this.Descending);
+            this.SortingDirection.Controls.Add(this.Ascending);
+            this.SortingDirection.Location = new System.Drawing.Point(1034, 135);
+            this.SortingDirection.Name = "SortingDirection";
+            this.SortingDirection.Size = new System.Drawing.Size(91, 74);
+            this.SortingDirection.TabIndex = 7;
+            this.SortingDirection.TabStop = false;
+            this.SortingDirection.Text = "Kolejność";
+            // 
+            // Ascending
+            // 
+            this.Ascending.AutoSize = true;
+            this.Ascending.Checked = true;
+            this.Ascending.Location = new System.Drawing.Point(7, 22);
+            this.Ascending.Name = "Ascending";
+            this.Ascending.Size = new System.Drawing.Size(83, 20);
+            this.Ascending.TabIndex = 0;
+            this.Ascending.TabStop = true;
+            this.Ascending.Text = "Rosnąco";
+            this.Ascending.UseVisualStyleBackColor = true;
+            // 
+            // Descending
+            // 
+            this.Descending.AutoSize = true;
+            this.Descending.Location = new System.Drawing.Point(7, 49);
+            this.Descending.Name = "Descending";
+            this.Descending.Size = new System.Drawing.Size(84, 20);
+            this.Descending.TabIndex = 1;
+            this.Descending.Text = "Malejąco";
+            this.Descending.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 497);
+            this.Controls.Add(this.SortingDirection);
+            this.Controls.Add(this.SortingType);
             this.Controls.Add(this.ShowMovies);
             this.Controls.Add(this.ShowClients);
             this.Controls.Add(this.dataGridView1);
@@ -100,6 +190,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.SortingType.ResumeLayout(false);
+            this.SortingType.PerformLayout();
+            this.SortingDirection.ResumeLayout(false);
+            this.SortingDirection.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +206,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button ShowClients;
         private System.Windows.Forms.Button ShowMovies;
+        private System.Windows.Forms.GroupBox SortingType;
+        private System.Windows.Forms.RadioButton ByName;
+        private System.Windows.Forms.RadioButton ById;
+        private System.Windows.Forms.RadioButton ByDateAdded;
+        private System.Windows.Forms.GroupBox SortingDirection;
+        private System.Windows.Forms.RadioButton Descending;
+        private System.Windows.Forms.RadioButton Ascending;
     }
 }
 
