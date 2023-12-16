@@ -1,0 +1,11 @@
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\bin\Debug\MNDBProject.exe.config
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\bin\Debug\MNDBProject.exe
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\bin\Debug\MNDBProject.pdb
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.csproj.AssemblyReference.cache
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.Form1.resources
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.Properties.Resources.resources
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.csproj.GenerateResource.cache
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.csproj.CoreCompileInputs.cache
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.exe
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.pdb
