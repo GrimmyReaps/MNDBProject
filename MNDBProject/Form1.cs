@@ -67,8 +67,7 @@ namespace MNDBProject
         private void button2_Click(object sender, EventArgs e)
         {
             //Clear the GridView
-            dataGridView1.DataSource = null;
-            dataGridView1.Rows.Clear();
+            ClearGView();
 
             //Like in setup
             var mongoDatabase = dbClient.GetDatabase("Wypozyczalnia");
@@ -85,13 +84,18 @@ namespace MNDBProject
             ShowMovies.Enabled = true;
             SortingType.Enabled = false;
             SortingDirection.Enabled = false;
+            AddClient.Enabled = true;
+            DeleteClient.Enabled = true;
+            ModifyClient.Enabled = true;
+            AddMovie.Enabled = false;
+            ModifyMovie.Enabled = false;
+            DeleteMovie.Enabled = false;
         }
 
         private void ShowMovies_Click(object sender, EventArgs e)
         {
             //Clear the GridView
-            dataGridView1.DataSource = null;
-            dataGridView1.Rows.Clear();
+            ClearGView();
 
             //Like in setup
             var mongoDatabase = dbClient.GetDatabase("Wypozyczalnia");
@@ -108,6 +112,12 @@ namespace MNDBProject
             ShowMovies.Enabled = false;
             SortingType.Enabled = true;
             SortingDirection.Enabled = true;
+            AddClient.Enabled = false;
+            DeleteClient.Enabled = false;
+            ModifyClient.Enabled = false;
+            AddMovie.Enabled = true;
+            ModifyMovie.Enabled = true;
+            DeleteMovie.Enabled = true;
         }
 
         private void ByDateAdded_MouseClick(object sender, MouseEventArgs e)
@@ -148,6 +158,90 @@ namespace MNDBProject
                 dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             }
+        }
+
+        private void ById_MouseClick(object sender, MouseEventArgs e)
+        {
+            //Clear the GridView
+            ClearGView();
+
+            //Like in setup
+            var mongoDatabase = dbClient.GetDatabase("Wypozyczalnia");
+            var mongoCollection = mongoDatabase.GetCollection<Movies>(Movies.MoviesDBName);
+
+            if (Ascending.Checked == true)
+            {
+                var sortFilter = Builders<Movies>.Sort.Ascending(f => f.Id);
+                var matchFilter = Builders<Movies>.Filter.Empty;
+                var pipeline = new EmptyPipelineDefinition<Movies>().Match(matchFilter).Sort(sortFilter);
+                var MoviesFound = mongoCollection.Aggregate(pipeline).ToList();
+
+                //Console.WriteLine(MoviesFound);
+
+                //Show Data
+                dataGridView1.DataSource = MoviesFound;
+                dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+            else if (Descending.Checked == true)
+            {
+                var sortFilter = Builders<Movies>.Sort.Descending(f => f.Id);
+                var matchFilter = Builders<Movies>.Filter.Empty;
+                var pipeline = new EmptyPipelineDefinition<Movies>().Match(matchFilter).Sort(sortFilter);
+                var MoviesFound = mongoCollection.Aggregate(pipeline).ToList();
+
+                //Console.WriteLine(MoviesFound);
+
+                //Show Data
+                dataGridView1.DataSource = MoviesFound;
+                dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+        }
+
+        private void ByName_MouseClick(object sender, MouseEventArgs e)
+        {
+            //Clear the GridView
+            ClearGView();
+
+            //Like in setup
+            var mongoDatabase = dbClient.GetDatabase("Wypozyczalnia");
+            var mongoCollection = mongoDatabase.GetCollection<Movies>(Movies.MoviesDBName);
+
+            if (Ascending.Checked == true)
+            {
+                var sortFilter = Builders<Movies>.Sort.Ascending(f => f.Tytul);
+                var matchFilter = Builders<Movies>.Filter.Empty;
+                var pipeline = new EmptyPipelineDefinition<Movies>().Match(matchFilter).Sort(sortFilter);
+                var MoviesFound = mongoCollection.Aggregate(pipeline).ToList();
+
+                //Console.WriteLine(MoviesFound);
+
+                //Show Data
+                dataGridView1.DataSource = MoviesFound;
+                dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+            else if (Descending.Checked == true)
+            {
+                var sortFilter = Builders<Movies>.Sort.Descending(f => f.Tytul);
+                var matchFilter = Builders<Movies>.Filter.Empty;
+                var pipeline = new EmptyPipelineDefinition<Movies>().Match(matchFilter).Sort(sortFilter);
+                var MoviesFound = mongoCollection.Aggregate(pipeline).ToList();
+
+                //Console.WriteLine(MoviesFound);
+
+                //Show Data
+                dataGridView1.DataSource = MoviesFound;
+                dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+        }
+
+        public void ClearGView()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
         }
     }
 
