@@ -243,6 +243,18 @@ namespace MNDBProject
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
         }
+
+        private void AddMovie_Click(object sender, EventArgs e)
+        {
+            Form2 addMovieForm = new Form2();
+            if(addMovieForm.ShowDialog(this) == DialogResult.OK)
+            {
+                /*DebugLabel.Text = "działa";
+                DebugLabel.Visible = true;*/
+
+            }
+
+        }
     }
 
     public class Movies

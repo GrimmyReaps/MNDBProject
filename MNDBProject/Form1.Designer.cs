@@ -46,6 +46,8 @@
             this.DeleteMovie = new System.Windows.Forms.Button();
             this.AddMovie = new System.Windows.Forms.Button();
             this.ModifyMovie = new System.Windows.Forms.Button();
+            this.BorrowMovie = new System.Windows.Forms.Button();
+            this.ShowBorrowings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SortingType.SuspendLayout();
             this.SortingDirection.SuspendLayout();
@@ -53,10 +55,10 @@
             // 
             // Close
             // 
-            this.Close.Location = new System.Drawing.Point(863, 370);
-            this.Close.Margin = new System.Windows.Forms.Padding(2);
+            this.Close.Location = new System.Drawing.Point(1151, 455);
+            this.Close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(68, 28);
+            this.Close.Size = new System.Drawing.Size(91, 34);
             this.Close.TabIndex = 0;
             this.Close.Text = "Zamknij";
             this.Close.UseVisualStyleBackColor = true;
@@ -65,31 +67,30 @@
             // DebugLabel
             // 
             this.DebugLabel.AutoSize = true;
-            this.DebugLabel.Location = new System.Drawing.Point(809, 7);
-            this.DebugLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DebugLabel.Location = new System.Drawing.Point(1079, 9);
             this.DebugLabel.Name = "DebugLabel";
-            this.DebugLabel.Size = new System.Drawing.Size(104, 15);
+            this.DebugLabel.Size = new System.Drawing.Size(117, 16);
             this.DebugLabel.TabIndex = 2;
             this.DebugLabel.Text = "Empty Sadge T_T";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 7);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 9);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(761, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(1015, 476);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // ShowClients
             // 
-            this.ShowClients.Location = new System.Drawing.Point(863, 328);
-            this.ShowClients.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowClients.Location = new System.Drawing.Point(1151, 404);
+            this.ShowClients.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowClients.Name = "ShowClients";
-            this.ShowClients.Size = new System.Drawing.Size(68, 37);
+            this.ShowClients.Size = new System.Drawing.Size(91, 46);
             this.ShowClients.TabIndex = 4;
             this.ShowClients.Text = "Wyświetl Klientów";
             this.ShowClients.UseVisualStyleBackColor = true;
@@ -98,10 +99,10 @@
             // ShowMovies
             // 
             this.ShowMovies.Enabled = false;
-            this.ShowMovies.Location = new System.Drawing.Point(863, 286);
-            this.ShowMovies.Margin = new System.Windows.Forms.Padding(2);
+            this.ShowMovies.Location = new System.Drawing.Point(1151, 352);
+            this.ShowMovies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowMovies.Name = "ShowMovies";
-            this.ShowMovies.Size = new System.Drawing.Size(68, 37);
+            this.ShowMovies.Size = new System.Drawing.Size(91, 46);
             this.ShowMovies.TabIndex = 5;
             this.ShowMovies.Text = "Wyświetl Filmy";
             this.ShowMovies.UseVisualStyleBackColor = true;
@@ -112,11 +113,11 @@
             this.SortingType.Controls.Add(this.ByDateAdded);
             this.SortingType.Controls.Add(this.ById);
             this.SortingType.Controls.Add(this.ByName);
-            this.SortingType.Location = new System.Drawing.Point(775, 23);
-            this.SortingType.Margin = new System.Windows.Forms.Padding(2);
+            this.SortingType.Location = new System.Drawing.Point(1033, 28);
+            this.SortingType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SortingType.Name = "SortingType";
-            this.SortingType.Padding = new System.Windows.Forms.Padding(2);
-            this.SortingType.Size = new System.Drawing.Size(122, 81);
+            this.SortingType.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SortingType.Size = new System.Drawing.Size(163, 100);
             this.SortingType.TabIndex = 6;
             this.SortingType.TabStop = false;
             this.SortingType.Text = "Sortowanie";
@@ -124,10 +125,10 @@
             // ByDateAdded
             // 
             this.ByDateAdded.AutoSize = true;
-            this.ByDateAdded.Location = new System.Drawing.Point(0, 60);
-            this.ByDateAdded.Margin = new System.Windows.Forms.Padding(2);
+            this.ByDateAdded.Location = new System.Drawing.Point(0, 74);
+            this.ByDateAdded.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ByDateAdded.Name = "ByDateAdded";
-            this.ByDateAdded.Size = new System.Drawing.Size(128, 19);
+            this.ByDateAdded.Size = new System.Drawing.Size(139, 20);
             this.ByDateAdded.TabIndex = 2;
             this.ByDateAdded.TabStop = true;
             this.ByDateAdded.Text = "Po Dacie Dodania";
@@ -137,10 +138,10 @@
             // ById
             // 
             this.ById.Checked = true;
-            this.ById.Location = new System.Drawing.Point(0, 36);
-            this.ById.Margin = new System.Windows.Forms.Padding(2);
+            this.ById.Location = new System.Drawing.Point(0, 44);
+            this.ById.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ById.Name = "ById";
-            this.ById.Size = new System.Drawing.Size(78, 20);
+            this.ById.Size = new System.Drawing.Size(104, 25);
             this.ById.TabIndex = 1;
             this.ById.TabStop = true;
             this.ById.Text = "Po Id";
@@ -150,10 +151,10 @@
             // ByName
             // 
             this.ByName.AutoSize = true;
-            this.ByName.Location = new System.Drawing.Point(0, 17);
-            this.ByName.Margin = new System.Windows.Forms.Padding(2);
+            this.ByName.Location = new System.Drawing.Point(0, 21);
+            this.ByName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ByName.Name = "ByName";
-            this.ByName.Size = new System.Drawing.Size(87, 19);
+            this.ByName.Size = new System.Drawing.Size(92, 20);
             this.ByName.TabIndex = 0;
             this.ByName.TabStop = true;
             this.ByName.Text = "Po Nazwie";
@@ -164,11 +165,11 @@
             // 
             this.SortingDirection.Controls.Add(this.Descending);
             this.SortingDirection.Controls.Add(this.Ascending);
-            this.SortingDirection.Location = new System.Drawing.Point(776, 110);
-            this.SortingDirection.Margin = new System.Windows.Forms.Padding(2);
+            this.SortingDirection.Location = new System.Drawing.Point(1035, 135);
+            this.SortingDirection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SortingDirection.Name = "SortingDirection";
-            this.SortingDirection.Padding = new System.Windows.Forms.Padding(2);
-            this.SortingDirection.Size = new System.Drawing.Size(68, 60);
+            this.SortingDirection.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SortingDirection.Size = new System.Drawing.Size(91, 74);
             this.SortingDirection.TabIndex = 7;
             this.SortingDirection.TabStop = false;
             this.SortingDirection.Text = "Kolejność";
@@ -176,10 +177,10 @@
             // Descending
             // 
             this.Descending.AutoSize = true;
-            this.Descending.Location = new System.Drawing.Point(5, 40);
-            this.Descending.Margin = new System.Windows.Forms.Padding(2);
+            this.Descending.Location = new System.Drawing.Point(7, 49);
+            this.Descending.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Descending.Name = "Descending";
-            this.Descending.Size = new System.Drawing.Size(79, 19);
+            this.Descending.Size = new System.Drawing.Size(84, 20);
             this.Descending.TabIndex = 1;
             this.Descending.Text = "Malejąco";
             this.Descending.UseVisualStyleBackColor = true;
@@ -188,10 +189,10 @@
             // 
             this.Ascending.AutoSize = true;
             this.Ascending.Checked = true;
-            this.Ascending.Location = new System.Drawing.Point(5, 18);
-            this.Ascending.Margin = new System.Windows.Forms.Padding(2);
+            this.Ascending.Location = new System.Drawing.Point(7, 22);
+            this.Ascending.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Ascending.Name = "Ascending";
-            this.Ascending.Size = new System.Drawing.Size(77, 19);
+            this.Ascending.Size = new System.Drawing.Size(83, 20);
             this.Ascending.TabIndex = 0;
             this.Ascending.TabStop = true;
             this.Ascending.Text = "Rosnąco";
@@ -200,9 +201,10 @@
             // AddClient
             // 
             this.AddClient.Enabled = false;
-            this.AddClient.Location = new System.Drawing.Point(781, 357);
+            this.AddClient.Location = new System.Drawing.Point(1041, 439);
+            this.AddClient.Margin = new System.Windows.Forms.Padding(4);
             this.AddClient.Name = "AddClient";
-            this.AddClient.Size = new System.Drawing.Size(75, 39);
+            this.AddClient.Size = new System.Drawing.Size(100, 48);
             this.AddClient.TabIndex = 8;
             this.AddClient.Text = "Dodaj klienta";
             this.AddClient.UseVisualStyleBackColor = true;
@@ -210,54 +212,80 @@
             // DeleteClient
             // 
             this.DeleteClient.Enabled = false;
-            this.DeleteClient.Location = new System.Drawing.Point(781, 313);
+            this.DeleteClient.Location = new System.Drawing.Point(1041, 385);
+            this.DeleteClient.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteClient.Name = "DeleteClient";
-            this.DeleteClient.Size = new System.Drawing.Size(75, 38);
+            this.DeleteClient.Size = new System.Drawing.Size(100, 47);
             this.DeleteClient.TabIndex = 9;
             this.DeleteClient.Text = "Usuń klienta";
             this.DeleteClient.UseVisualStyleBackColor = true;
             // 
             // ModifyClient
             // 
-            this.ModifyClient.Location = new System.Drawing.Point(781, 255);
+            this.ModifyClient.Location = new System.Drawing.Point(1041, 314);
+            this.ModifyClient.Margin = new System.Windows.Forms.Padding(4);
             this.ModifyClient.Name = "ModifyClient";
-            this.ModifyClient.Size = new System.Drawing.Size(75, 54);
+            this.ModifyClient.Size = new System.Drawing.Size(100, 66);
             this.ModifyClient.TabIndex = 10;
             this.ModifyClient.Text = "Modyfikuj dane klienta";
             this.ModifyClient.UseVisualStyleBackColor = true;
             // 
             // DeleteMovie
             // 
-            this.DeleteMovie.Location = new System.Drawing.Point(862, 255);
+            this.DeleteMovie.Location = new System.Drawing.Point(1149, 314);
+            this.DeleteMovie.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteMovie.Name = "DeleteMovie";
-            this.DeleteMovie.Size = new System.Drawing.Size(68, 26);
+            this.DeleteMovie.Size = new System.Drawing.Size(91, 32);
             this.DeleteMovie.TabIndex = 11;
             this.DeleteMovie.Text = "Usuń film";
             this.DeleteMovie.UseVisualStyleBackColor = true;
             // 
             // AddMovie
             // 
-            this.AddMovie.Location = new System.Drawing.Point(862, 211);
+            this.AddMovie.Location = new System.Drawing.Point(1149, 260);
+            this.AddMovie.Margin = new System.Windows.Forms.Padding(4);
             this.AddMovie.Name = "AddMovie";
-            this.AddMovie.Size = new System.Drawing.Size(67, 38);
+            this.AddMovie.Size = new System.Drawing.Size(89, 47);
             this.AddMovie.TabIndex = 12;
             this.AddMovie.Text = "Dodaj film";
             this.AddMovie.UseVisualStyleBackColor = true;
+            this.AddMovie.Click += new System.EventHandler(this.AddMovie_Click);
             // 
             // ModifyMovie
             // 
-            this.ModifyMovie.Location = new System.Drawing.Point(781, 211);
+            this.ModifyMovie.Location = new System.Drawing.Point(1041, 260);
+            this.ModifyMovie.Margin = new System.Windows.Forms.Padding(4);
             this.ModifyMovie.Name = "ModifyMovie";
-            this.ModifyMovie.Size = new System.Drawing.Size(75, 38);
+            this.ModifyMovie.Size = new System.Drawing.Size(100, 47);
             this.ModifyMovie.TabIndex = 13;
             this.ModifyMovie.Text = "Modyfikuj opis filmu";
             this.ModifyMovie.UseVisualStyleBackColor = true;
             // 
+            // BorrowMovie
+            // 
+            this.BorrowMovie.Location = new System.Drawing.Point(1151, 209);
+            this.BorrowMovie.Name = "BorrowMovie";
+            this.BorrowMovie.Size = new System.Drawing.Size(86, 44);
+            this.BorrowMovie.TabIndex = 14;
+            this.BorrowMovie.Text = "Wypożycz film";
+            this.BorrowMovie.UseVisualStyleBackColor = true;
+            // 
+            // ShowBorrowings
+            // 
+            this.ShowBorrowings.Location = new System.Drawing.Point(1042, 209);
+            this.ShowBorrowings.Name = "ShowBorrowings";
+            this.ShowBorrowings.Size = new System.Drawing.Size(99, 43);
+            this.ShowBorrowings.TabIndex = 15;
+            this.ShowBorrowings.Text = "Pokaż wypożyczenia";
+            this.ShowBorrowings.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 404);
+            this.ClientSize = new System.Drawing.Size(1256, 497);
+            this.Controls.Add(this.ShowBorrowings);
+            this.Controls.Add(this.BorrowMovie);
             this.Controls.Add(this.ModifyMovie);
             this.Controls.Add(this.AddMovie);
             this.Controls.Add(this.DeleteMovie);
@@ -271,7 +299,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.DebugLabel);
             this.Controls.Add(this.Close);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -304,6 +332,8 @@
         private System.Windows.Forms.Button DeleteMovie;
         private System.Windows.Forms.Button AddMovie;
         private System.Windows.Forms.Button ModifyMovie;
+        private System.Windows.Forms.Button BorrowMovie;
+        private System.Windows.Forms.Button ShowBorrowings;
     }
 }
 
