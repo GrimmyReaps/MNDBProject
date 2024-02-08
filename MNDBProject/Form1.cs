@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using System.Text.RegularExpressions;
 
 namespace MNDBProject
 {
@@ -251,7 +252,23 @@ namespace MNDBProject
             {
                 /*DebugLabel.Text = "działa";
                 DebugLabel.Visible = true;*/
-
+                String Grade = addMovieForm.gradeTextBox.Text;
+                String pattern = @"^[0-9]\,[0-9]|[0-9]{1,2}$";
+                if (!Regex.Match(Grade, pattern).Success)
+                {
+                    MessageBox.Show("Niepoprawnie wpisana ocena", "Uwaga!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (Double.Parse(Grade) > 10)
+                    {
+                        MessageBox.Show("Maksymalna ocena to 10", "Uwaga!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        double graded = Double.Parse(Grade);
+                    }
+                }
             }
 
         }

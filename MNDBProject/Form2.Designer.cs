@@ -37,6 +37,8 @@
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.gradeTextBox = new System.Windows.Forms.TextBox();
             this.gradeLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.descriptionTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // movieTitleTextBox
@@ -49,7 +51,7 @@
             // OK
             // 
             this.OK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.OK.Location = new System.Drawing.Point(13, 348);
+            this.OK.Location = new System.Drawing.Point(12, 254);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(88, 28);
             this.OK.TabIndex = 1;
@@ -115,11 +117,30 @@
             this.gradeLabel.TabIndex = 8;
             this.gradeLabel.Text = "Ocena";
             // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Location = new System.Drawing.Point(244, 9);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(35, 16);
+            this.descriptionLabel.TabIndex = 9;
+            this.descriptionLabel.Text = "Opis";
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Location = new System.Drawing.Point(247, 28);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(541, 258);
+            this.descriptionTextBox.TabIndex = 10;
+            this.descriptionTextBox.Text = "";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 388);
+            this.ClientSize = new System.Drawing.Size(801, 294);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.gradeLabel);
             this.Controls.Add(this.gradeTextBox);
             this.Controls.Add(this.lengthTextBox);
@@ -137,15 +158,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox movieTitleTextBox;
         private System.Windows.Forms.Button OK;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label DirectorLabel;
-        private System.Windows.Forms.TextBox directorTextBox;
         private System.Windows.Forms.Label lengthLabel;
-        private System.Windows.Forms.TextBox lengthTextBox;
-        private System.Windows.Forms.TextBox gradeTextBox;
         private System.Windows.Forms.Label gradeLabel;
+        private System.Windows.Forms.Label descriptionLabel;
+        public System.Windows.Forms.TextBox movieTitleTextBox;
+        public System.Windows.Forms.TextBox directorTextBox;
+        public System.Windows.Forms.TextBox lengthTextBox;
+        public System.Windows.Forms.TextBox gradeTextBox;
+        public System.Windows.Forms.RichTextBox descriptionTextBox;
     }
 }
