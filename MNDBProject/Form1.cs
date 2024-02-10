@@ -38,13 +38,26 @@ namespace MNDBProject
 
             dataGridView1.ReadOnly = true;
 
+            // Concatenate array elements into a single string for display
+            var moviesForDisplay = MoviesFound.Select(movie => new
+            {
+                movie.Id,
+                movie.Tytul,
+                Gatunek = string.Join(", ", movie.Gatunek),
+                movie.Rezyser,
+                movie.CzasTrwania,
+                movie.Ocena,
+                movie.Opis,
+                Aktorzy = string.Join(", ", movie.Aktorzy),
+                movie.DataDodania
+            }).ToList();
+
             //Show Data
-            dataGridView1.DataSource = MoviesFound;
+            dataGridView1.DataSource = moviesForDisplay;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
             //label1.Text = document.Aktorzy[0] + ", " + document.Aktorzy[1] + ", " + document.Aktorzy[2];
-
             //var dbList = dbClient.ListDatabases().ToList();
 
             //Console.WriteLine("The list of databases on this server is: ");
@@ -104,8 +117,22 @@ namespace MNDBProject
             var filter = Builders<Movies>.Filter.Empty;
             var MoviesFound = mongoCollection.Find(filter).ToList();
 
+            // Concatenate array elements into a single string for display
+            var moviesForDisplay = MoviesFound.Select(movie => new
+            {
+                movie.Id,
+                movie.Tytul,
+                Gatunek = string.Join(", ", movie.Gatunek),
+                movie.Rezyser,
+                movie.CzasTrwania,
+                movie.Ocena,
+                movie.Opis,
+                Aktorzy = string.Join(", ", movie.Aktorzy),
+                movie.DataDodania
+            }).ToList();
+
             //Show Data
-            dataGridView1.DataSource = MoviesFound;
+            dataGridView1.DataSource = moviesForDisplay;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
@@ -248,29 +275,50 @@ namespace MNDBProject
         private void AddMovie_Click(object sender, EventArgs e)
         {
             Form2 addMovieForm = new Form2();
-            if(addMovieForm.ShowDialog(this) == DialogResult.OK)
-            {
-                /*DebugLabel.Text = "działa";
-                DebugLabel.Visible = true;*/
-                String Grade = addMovieForm.gradeTextBox.Text;
-                String pattern = @"^[0-9]\,[0-9]|[0-9]{1,2}$";
-                if (!Regex.Match(Grade, pattern).Success)
-                {
-                    MessageBox.Show("Niepoprawnie wpisana ocena", "Uwaga!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (Double.Parse(Grade) > 10)
-                    {
-                        MessageBox.Show("Maksymalna ocena to 10", "Uwaga!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        double graded = Double.Parse(Grade);
-                    }
-                }
-            }
+            addMovieForm.ShowDialog(this);
+            //Enter the Database 
+            var mongoDatabase = dbClient.GetDatabase("Wypozyczalnia");
+            //Choose the Collection
+            var mongoCollection = mongoDatabase.GetCollection<Movies>(Movies.MoviesDBName);
+            int documentsAmount = (int)mongoCollection.CountDocuments(Builders<Movies>.Filter.Empty);
 
+            Movies movie = new Movies
+            {
+                Id = documentsAmount + 1,
+                Tytul = addMovieForm.title,
+                Rezyser = addMovieForm.director,
+                Opis = addMovieForm.description,
+                Ocena = addMovieForm.graded,
+                CzasTrwania = addMovieForm.movieLength,
+                Gatunek = addMovieForm.genres,
+                Aktorzy = addMovieForm.actors,
+                DataDodania = DateTime.Now
+            };
+            
+            mongoCollection.InsertOne(movie);
+
+            addMovieForm.Close();
+
+            var filter = Builders<Movies>.Filter.Empty;
+            var MoviesFound = mongoCollection.Find(filter).ToList();
+
+            var moviesForDisplay = MoviesFound.Select(show => new
+            {
+                show.Id,
+                show.Tytul,
+                Gatunek = string.Join(", ", show.Gatunek),
+                show.Rezyser,
+                show.CzasTrwania,
+                show.Ocena,
+                show.Opis,
+                Aktorzy = string.Join(", ", show.Aktorzy),
+                show.DataDodania
+            }).ToList();
+
+            //Show Data
+            dataGridView1.DataSource = moviesForDisplay;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
     }
 

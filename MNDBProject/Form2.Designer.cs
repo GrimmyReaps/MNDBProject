@@ -39,6 +39,11 @@
             this.gradeLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.descriptionTextBox = new System.Windows.Forms.RichTextBox();
+            this.GenreLabel = new System.Windows.Forms.Label();
+            this.genreTextBox = new System.Windows.Forms.TextBox();
+            this.actorsLabel = new System.Windows.Forms.Label();
+            this.actorsTextBox = new System.Windows.Forms.TextBox();
+            this.infoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // movieTitleTextBox
@@ -50,13 +55,13 @@
             // 
             // OK
             // 
-            this.OK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.OK.Location = new System.Drawing.Point(12, 254);
+            this.OK.Location = new System.Drawing.Point(12, 318);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(88, 28);
             this.OK.TabIndex = 1;
             this.OK.Text = "Dodaj film";
             this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // TitleLabel
             // 
@@ -97,15 +102,16 @@
             this.lengthTextBox.Location = new System.Drawing.Point(15, 122);
             this.lengthTextBox.MaxLength = 4;
             this.lengthTextBox.Name = "lengthTextBox";
-            this.lengthTextBox.Size = new System.Drawing.Size(100, 22);
+            this.lengthTextBox.Size = new System.Drawing.Size(54, 22);
             this.lengthTextBox.TabIndex = 6;
+            this.lengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lengthTextBox_KeyPress);
             // 
             // gradeTextBox
             // 
             this.gradeTextBox.Location = new System.Drawing.Point(12, 166);
             this.gradeTextBox.MaxLength = 3;
             this.gradeTextBox.Name = "gradeTextBox";
-            this.gradeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.gradeTextBox.Size = new System.Drawing.Size(57, 22);
             this.gradeTextBox.TabIndex = 7;
             // 
             // gradeLabel
@@ -130,15 +136,60 @@
             // 
             this.descriptionTextBox.Location = new System.Drawing.Point(247, 28);
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(541, 258);
+            this.descriptionTextBox.Size = new System.Drawing.Size(541, 318);
             this.descriptionTextBox.TabIndex = 10;
             this.descriptionTextBox.Text = "";
+            // 
+            // GenreLabel
+            // 
+            this.GenreLabel.AutoSize = true;
+            this.GenreLabel.Location = new System.Drawing.Point(12, 227);
+            this.GenreLabel.Name = "GenreLabel";
+            this.GenreLabel.Size = new System.Drawing.Size(52, 16);
+            this.GenreLabel.TabIndex = 11;
+            this.GenreLabel.Text = "Gatunki";
+            // 
+            // genreTextBox
+            // 
+            this.genreTextBox.Location = new System.Drawing.Point(12, 246);
+            this.genreTextBox.Name = "genreTextBox";
+            this.genreTextBox.Size = new System.Drawing.Size(161, 22);
+            this.genreTextBox.TabIndex = 12;
+            // 
+            // actorsLabel
+            // 
+            this.actorsLabel.AutoSize = true;
+            this.actorsLabel.Location = new System.Drawing.Point(12, 271);
+            this.actorsLabel.Name = "actorsLabel";
+            this.actorsLabel.Size = new System.Drawing.Size(51, 16);
+            this.actorsLabel.TabIndex = 13;
+            this.actorsLabel.Text = "Aktorzy";
+            // 
+            // actorsTextBox
+            // 
+            this.actorsTextBox.Location = new System.Drawing.Point(12, 290);
+            this.actorsTextBox.Name = "actorsTextBox";
+            this.actorsTextBox.Size = new System.Drawing.Size(161, 22);
+            this.actorsTextBox.TabIndex = 14;
+            // 
+            // infoLabel
+            // 
+            this.infoLabel.Location = new System.Drawing.Point(12, 191);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(158, 36);
+            this.infoLabel.TabIndex = 16;
+            this.infoLabel.Text = "Aktorów i Gatunki rozdzielamy przecinkiem";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 294);
+            this.ClientSize = new System.Drawing.Size(801, 358);
+            this.Controls.Add(this.infoLabel);
+            this.Controls.Add(this.actorsTextBox);
+            this.Controls.Add(this.actorsLabel);
+            this.Controls.Add(this.genreTextBox);
+            this.Controls.Add(this.GenreLabel);
             this.Controls.Add(this.descriptionTextBox);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.gradeLabel);
@@ -164,10 +215,15 @@
         private System.Windows.Forms.Label lengthLabel;
         private System.Windows.Forms.Label gradeLabel;
         private System.Windows.Forms.Label descriptionLabel;
-        public System.Windows.Forms.TextBox movieTitleTextBox;
-        public System.Windows.Forms.TextBox directorTextBox;
-        public System.Windows.Forms.TextBox lengthTextBox;
-        public System.Windows.Forms.TextBox gradeTextBox;
-        public System.Windows.Forms.RichTextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox movieTitleTextBox;
+        private System.Windows.Forms.TextBox directorTextBox;
+        private System.Windows.Forms.TextBox lengthTextBox;
+        private System.Windows.Forms.TextBox gradeTextBox;
+        private System.Windows.Forms.RichTextBox descriptionTextBox;
+        private System.Windows.Forms.Label GenreLabel;
+        private System.Windows.Forms.TextBox genreTextBox;
+        private System.Windows.Forms.Label actorsLabel;
+        private System.Windows.Forms.TextBox actorsTextBox;
+        private System.Windows.Forms.Label infoLabel;
     }
 }
