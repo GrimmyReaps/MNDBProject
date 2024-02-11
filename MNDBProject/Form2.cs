@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MNDBProject
 {
-    public partial class Form2 : Form
+    public partial class MovieForm : Form
     {
         //Readable info
         public string title;
@@ -30,7 +30,7 @@ namespace MNDBProject
         public string genresUpdate;
         public string actorsUpdate;
 
-        public Form2()
+        public MovieForm()
         {
             InitializeComponent();
         }

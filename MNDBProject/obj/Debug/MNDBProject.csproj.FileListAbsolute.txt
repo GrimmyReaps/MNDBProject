@@ -52,4 +52,5 @@ C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\bin\Debug\System.Sec
 C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\bin\Debug\System.Text.Encoding.CodePages.xml
 C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.csproj.CopyComplete
-C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.Form2.resources
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.MovieForm.resources
+C:\Users\tomek\Desktop\MNBD\Projekt\MNDBProject\MNDBProject\obj\Debug\MNDBProject.ClientForm.resources

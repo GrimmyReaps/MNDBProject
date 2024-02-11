@@ -1,6 +1,6 @@
 ﻿namespace MNDBProject
 {
-    partial class Form2
+    partial class MovieForm
     {
         /// <summary>
         /// Required designer variable.
@@ -195,7 +195,7 @@
             this.Update.Visible = false;
             this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // Form2
+            // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,8 +217,8 @@
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.OK);
             this.Controls.Add(this.movieTitleTextBox);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "MovieForm";
+            this.Text = "Filmy";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -276,7 +276,7 @@ namespace MNDBProject
 
         private void AddMovie_Click(object sender, EventArgs e)
         {
-            Form2 addMovieForm = new Form2();
+            MovieForm addMovieForm = new MovieForm();
             addMovieForm.OK.Enabled = true;
             addMovieForm.OK.Visible = true;
             addMovieForm.ShowDialog(this);
@@ -333,7 +333,7 @@ namespace MNDBProject
 
         private void ModifyMovie_Click(object sender, EventArgs e)
         {
-            Form2 updateMovieForm = new Form2();
+            MovieForm updateMovieForm = new MovieForm();
             updateMovieForm.Update.Enabled = true;
             updateMovieForm.Update.Visible = true;
             updateMovieForm.titleUpdate = dataGridView1.Rows[RowIdx].Cells[1].Value.ToString();
