@@ -78,11 +78,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 9);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1015, 476);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // ShowClients
@@ -222,6 +225,7 @@
             // 
             // ModifyClient
             // 
+            this.ModifyClient.Enabled = false;
             this.ModifyClient.Location = new System.Drawing.Point(1041, 314);
             this.ModifyClient.Margin = new System.Windows.Forms.Padding(4);
             this.ModifyClient.Name = "ModifyClient";
@@ -239,6 +243,7 @@
             this.DeleteMovie.TabIndex = 11;
             this.DeleteMovie.Text = "Usuń film";
             this.DeleteMovie.UseVisualStyleBackColor = true;
+            this.DeleteMovie.Click += new System.EventHandler(this.DeleteMovie_Click);
             // 
             // AddMovie
             // 
@@ -260,6 +265,7 @@
             this.ModifyMovie.TabIndex = 13;
             this.ModifyMovie.Text = "Modyfikuj opis filmu";
             this.ModifyMovie.UseVisualStyleBackColor = true;
+            this.ModifyMovie.Click += new System.EventHandler(this.ModifyMovie_Click);
             // 
             // BorrowMovie
             // 

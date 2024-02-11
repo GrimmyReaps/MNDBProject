@@ -44,6 +44,7 @@
             this.actorsLabel = new System.Windows.Forms.Label();
             this.actorsTextBox = new System.Windows.Forms.TextBox();
             this.infoLabel = new System.Windows.Forms.Label();
+            this.Update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // movieTitleTextBox
@@ -55,12 +56,14 @@
             // 
             // OK
             // 
+            this.OK.Enabled = false;
             this.OK.Location = new System.Drawing.Point(12, 318);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(88, 28);
             this.OK.TabIndex = 1;
             this.OK.Text = "Dodaj film";
             this.OK.UseVisualStyleBackColor = true;
+            this.OK.Visible = false;
             this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // TitleLabel
@@ -180,11 +183,24 @@
             this.infoLabel.TabIndex = 16;
             this.infoLabel.Text = "Aktorów i Gatunki rozdzielamy przecinkiem";
             // 
+            // Update
+            // 
+            this.Update.Enabled = false;
+            this.Update.Location = new System.Drawing.Point(12, 318);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(88, 27);
+            this.Update.TabIndex = 17;
+            this.Update.Text = "Zmofyfikuj";
+            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Visible = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 358);
+            this.Controls.Add(this.Update);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.actorsTextBox);
             this.Controls.Add(this.actorsLabel);
@@ -209,7 +225,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button OK;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label DirectorLabel;
         private System.Windows.Forms.Label lengthLabel;
@@ -225,5 +240,7 @@
         private System.Windows.Forms.Label actorsLabel;
         private System.Windows.Forms.TextBox actorsTextBox;
         private System.Windows.Forms.Label infoLabel;
+        public System.Windows.Forms.Button Update;
+        public System.Windows.Forms.Button OK;
     }
 }
