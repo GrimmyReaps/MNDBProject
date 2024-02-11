@@ -48,6 +48,7 @@
             this.ModifyMovie = new System.Windows.Forms.Button();
             this.BorrowMovie = new System.Windows.Forms.Button();
             this.ShowBorrowings = new System.Windows.Forms.Button();
+            this.ReturnMovieButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SortingType.SuspendLayout();
             this.SortingDirection.SuspendLayout();
@@ -211,6 +212,7 @@
             this.AddClient.TabIndex = 8;
             this.AddClient.Text = "Dodaj klienta";
             this.AddClient.UseVisualStyleBackColor = true;
+            this.AddClient.Click += new System.EventHandler(this.AddClient_Click);
             // 
             // DeleteClient
             // 
@@ -222,6 +224,7 @@
             this.DeleteClient.TabIndex = 9;
             this.DeleteClient.Text = "Usuń klienta";
             this.DeleteClient.UseVisualStyleBackColor = true;
+            this.DeleteClient.Click += new System.EventHandler(this.DeleteClient_Click);
             // 
             // ModifyClient
             // 
@@ -233,6 +236,7 @@
             this.ModifyClient.TabIndex = 10;
             this.ModifyClient.Text = "Modyfikuj dane klienta";
             this.ModifyClient.UseVisualStyleBackColor = true;
+            this.ModifyClient.Click += new System.EventHandler(this.ModifyClient_Click);
             // 
             // DeleteMovie
             // 
@@ -275,6 +279,7 @@
             this.BorrowMovie.TabIndex = 14;
             this.BorrowMovie.Text = "Wypożycz film";
             this.BorrowMovie.UseVisualStyleBackColor = true;
+            this.BorrowMovie.Click += new System.EventHandler(this.BorrowMovie_Click);
             // 
             // ShowBorrowings
             // 
@@ -284,12 +289,25 @@
             this.ShowBorrowings.TabIndex = 15;
             this.ShowBorrowings.Text = "Pokaż wypożyczenia";
             this.ShowBorrowings.UseVisualStyleBackColor = true;
+            this.ShowBorrowings.Click += new System.EventHandler(this.ShowBorrowings_Click);
+            // 
+            // ReturnMovieButton
+            // 
+            this.ReturnMovieButton.Enabled = false;
+            this.ReturnMovieButton.Location = new System.Drawing.Point(1151, 157);
+            this.ReturnMovieButton.Name = "ReturnMovieButton";
+            this.ReturnMovieButton.Size = new System.Drawing.Size(86, 46);
+            this.ReturnMovieButton.TabIndex = 16;
+            this.ReturnMovieButton.Text = "Zwróć film";
+            this.ReturnMovieButton.UseVisualStyleBackColor = true;
+            this.ReturnMovieButton.Click += new System.EventHandler(this.ReturnMovieButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1256, 497);
+            this.Controls.Add(this.ReturnMovieButton);
             this.Controls.Add(this.ShowBorrowings);
             this.Controls.Add(this.BorrowMovie);
             this.Controls.Add(this.ModifyMovie);
@@ -340,6 +358,7 @@
         private System.Windows.Forms.Button ModifyMovie;
         private System.Windows.Forms.Button BorrowMovie;
         private System.Windows.Forms.Button ShowBorrowings;
+        private System.Windows.Forms.Button ReturnMovieButton;
     }
 }
 
